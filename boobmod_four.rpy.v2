@@ -1,0 +1,57 @@
+init 1000 python in boobmod_four:
+    boobify = {
+        # Adine
+        "adine normal": ((0,0), "cr/boobmod/adineboobs.png"),
+        "adine normal b": ((0,0), "cr/boobmod/adineboobs.png"),
+        "adine normal c": ((0,0), "cr/boobmod/adineboobs.png"),
+        "adine frustrated": ((0,0), "cr/boobmod/adineboobs.png"),
+        "adine frustrated b": ((0,0), "cr/boobmod/adineboobs.png"),
+        "adine frustrated c": ((0,0), "cr/boobmod/adineboobs.png"),
+        "adine disappoint": ((0,0), "cr/boobmod/adineboobs.png"),
+        "adine disappoint_b": ((0,0), "cr/boobmod/adineboobs.png"),
+        "adine disappoint c": ((0,0), "cr/boobmod/adineboobs.png"),
+        "adine annoyed": ((0,0), "cr/boobmod/adineboobs.png"),
+        "adine annoyed b": ((0,0), "cr/boobmod/adineboobs.png"),
+        "adine annoyed c": ((0,0), "cr/boobmod/adineboobs.png"),
+        # Anna
+        "anna cry": ((0,0), "cr/boobmod/annaboobs.png"),
+        "anna despair": ((0,0), "cr/boobmod/annaboobs.png"),
+        "anna disgust": ((0,0), "cr/boobmod/annaboobs.png"),
+        "anna normal": ((0,0), "cr/boobmod/annaboobs.png"),
+        "anna rage": ((0,0), "cr/boobmod/annaboobs.png"),
+        "anna sad": ((0,0), "cr/boobmod/annaboobs.png"),
+        "anna smirk": ((0,0), "cr/boobmod/annaboobs.png"),
+        # Emera
+        "emera frown": ((0,0), "cr/boobmod/emeraboobs.png"),
+        "emera frown b": ((0,0), "cr/boobmod/emeraboobs.png"),
+        "emera laugh": ((0,0), "cr/boobmod/emeraboobs.png"),
+        "emera laugh b": ((0,0), "cr/boobmod/emeraboobs.png"),
+        "emera mean": ((0,0), "cr/boobmod/emeraboobs.png"),
+        "emera mean b": ((0,0), "cr/boobmod/emeraboobs.png"),
+        "emera normal": ((0,0), "cr/boobmod/emeraboobs.png"),
+        "emera normal b": ((0,0), "cr/boobmod/emeraboobs.png"),
+        "emera ques": ((0,0), "cr/boobmod/emeraboobs.png"),
+        "emera ques b": ((0,0), "cr/boobmod/emeraboobs.png"),
+    }
+
+    boobify_str = {(tuple(str(k).split()) if isinstance(k, (str, unicode)) else k):v for k,v in boobify.items()}
+    boobify_unicode = {(tuple(unicode(k).split()) if isinstance(k, (str, unicode)) else k):v for k,v in boobify.items()}
+
+    # merge the two dicts
+    boobify = boobify_str
+    boobify.update(boobify_unicode)
+
+    del boobify_str
+    del boobify_unicode
+
+    import renpy.display.im as im
+    import renpy.display.image
+
+    for name,displayable in renpy.display.image.images.items():
+        if name not in boobify:
+            print("Boobmod: skipping %s"%(name,))
+            continue
+
+        print("Boobmod: boobifying %s"%(name,))
+
+        # TODO: This code is clearly incomplete.

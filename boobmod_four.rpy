@@ -32,6 +32,8 @@ init 1000 python in boobmod_four:
         "cr/emera_normal_b.png": ((0,0), "cr/boobmod/emeraboobs.png"),
         "cr/emera_ques.png": ((0,0), "cr/boobmod/emeraboobs.png"),
         "cr/emera_ques_b.png": ((0,0), "cr/boobmod/emeraboobs.png"),
+        # Kalinth
+        "cr/kalinth_normal.png": ((0,0), "cr/boobmod/kalinthboobs.png"),
     }
 
     # The below code should never be written.
